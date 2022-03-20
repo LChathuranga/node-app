@@ -1,26 +1,12 @@
-//with callback
+const http = require('http')
 
-const {readFile, writeFile} = require('fs')
-
-readFile('./content/new/first.txt', 'utf8', (err,result) => {
-    if(err){
-        console.log(err);
-        return
+const server = http.createServer((req, res) => {
+    if(req.url === '/'){
+        res.end('homepage')
     }
-    const first = result
-    readFile('./content/new/second.txt','utf8', (err, result) => {
-        if(err){
-            console.log(err);
-            return
-        }
-        const second = result
-        writeFile('./content/new/four.txt', `The result : ${first}, ${second}`,{flag:'a'}
-        ,(err, result) => {
-            if(err){
-                console.log(err);
-                return
-            }
-            console.log(result);
-        })
-    })
+    if(req.url === '/about'){
+        res.end('about')
+    }
 })
+
+server.listen(3000)

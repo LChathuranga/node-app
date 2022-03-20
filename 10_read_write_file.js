@@ -10,3 +10,5 @@ writeFileSync('./content/new/third.txt', `Here is the result : ${first}, ${secon
 // for append file
 
 writeFileSync('./content/new/four.txt', `append the txt`, {flag: 'a'})
+
+//this is Sync
