@@ -26,4 +26,5 @@ readFile('./content/new/first.txt', 'utf8', (err,result) => {
 })
 
 //in this it will not going row to row
+//THIS NOT WAIT UNTIL TO GO NEXT 
 //this is Async
